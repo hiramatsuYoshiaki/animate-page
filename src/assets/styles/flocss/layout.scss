@@ -1,0 +1,286 @@
+// 各ページを構成する、ヘッダー、メインコンテンツエリア、サイドバー、フッターなどのスタイルをエリアごとに管理
+// ※ページ全体からみたレイアウトに対するスタイルを定義する
+// ※外枠のみ定義。子要素はなるべく入れない
+// ※ヘッダーやフッターの中身はp-で定義する
+// l-header. l-main, l-footer, l-container. l-nav
+
+// header-------------------------------------------------------------------------------
+// main---------------------------------------------------------------------------------
+// footer-------------------------------------------------------------------------------
+// nav----------------------------------------------------------------------------------
+// a-side-------------------------------------------------------------------------------
+
+// container----------------------------------------------------------------------------
+// * {
+//   border: 1px solid lightgrey;
+// }
+@import "./variables.scss";
+//edit
+.l-app-wrape{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height:100vh;
+    margin:0;
+    padding:0;
+    // border:1px solid red;
+    overflow:hidden;
+}
+
+.l-header{
+  position:relative;
+  background-color:$black;
+  color:$white;
+  width:100%;
+  flex-shrink: 0;
+  height:$header-height;
+  // border:1px solid white;
+  margin:0;
+  padding:0;
+  overflow:hidden;
+}
+.l-main{
+  position:relative;
+  background-color:$black;
+  flex-grow: 1;
+  margin:0;
+  padding:0;
+  // border:1px solid yellow;
+  
+} 
+.l-footer{
+  position:relative;
+  background-color:$black;
+  color:$white;
+  width:100%;
+  flex-shrink: 0;
+  height:$footer-height;
+  // border:1px solid green;
+  margin:0;
+  padding:0;
+  overflow:hidden;
+}
+
+.l-container,
+.l-container-fluid {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+@media (min-width: 600px) {
+  .l-container {
+    width: 600px;
+    max-width: 100%;
+  }
+}
+@media (min-width: 960px) {
+  .l-container {
+    width: 928px;
+    max-width: 100%;
+  }
+}
+@media (min-width: 1280px) {
+  .l-container {
+    width: 1248px;
+    max-width: 100%;
+     
+  }
+}
+
+// section
+.l-section {
+  margin-left: -16px;
+  margin-right: -16px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.l-section-fluid {
+  margin-left: -16px;
+  margin-right: -16px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  @media (min-width: 960px) {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+// grid
+// xs: 0, sm: 600, md: 960, lg: 1280, xl: 1920,
+//row ------------------------------------------------------------------------------------
+.l-row {
+  margin-left: -16px;
+  margin-right: -16px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+//row ------------------------------------------------------------------------------------
+.l-column {
+  margin-left: -16px;
+  margin-right: -16px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+//grid -----------------------------------------------------------------------------------
+.l-col-12 { 
+  width: 100%;
+  max-width: 100%;
+  overflow:hidden;
+}
+.l-col-6 {
+  width: 100%;
+  max-width: 50%; 
+  overflow:hidden;
+}
+.l-col-4 {
+  width: 100%;
+  max-width: 33.3%; 
+  overflow:hidden;
+}
+.l-col-sm-12 {
+  width: 100%;
+  @media (min-width: 600px) {
+    max-width: 100%;
+    overflow:hidden;
+  }
+}
+.l-col-sm-9 {
+  width: 100%;
+  @media (min-width: 600px) {
+    max-width: 75%;
+    overflow:hidden;
+  }
+}
+.l-col-sm-6 {
+  width: 100%;
+  @media (min-width: 600px) {
+    max-width: 50%;
+    overflow:hidden;
+  }
+} 
+.l-col-sm-4 {
+  width: 100%;
+  @media (min-width: 600px) {
+    max-width: 33.3%;
+    overflow:hidden;
+  }
+}
+.l-col-sm-3 {
+  width: 100%;
+  @media (min-width: 600px) {
+    max-width: 25%;
+    overflow:hidden;
+  }
+}
+.l-col-md-12 {
+  width: 100%;
+  @media (min-width: 960px) {
+    max-width: 100%;
+    overflow:hidden;
+  }
+}
+.l-col-md-9 {
+  width: 100%;
+  @media (min-width: 960px) {
+    max-width: 75%;
+    overflow:hidden;
+  }
+}
+.l-col-md-8 {
+  width: 100%;
+  @media (min-width: 960px) {
+    max-width: 66.6%;
+    overflow:hidden;
+  }
+}
+.l-col-md-6 {
+  width: 100%;
+  @media (min-width: 960px) {
+    max-width: 50%;
+    overflow:hidden;
+  }
+}
+.l-col-md-4 {
+  width: 100%;
+  @media (min-width: 960px) {
+    max-width: 33.3%;
+    overflow:hidden;
+  }
+}
+.l-col-md-3 {
+  width: 100%;
+  @media (min-width: 960px) {
+    max-width: 25%;
+    overflow:hidden;
+  }
+}
+.l-col-lg-12 {
+  width: 100%;
+  @media (min-width: 1280px) {
+    max-width: 100%;
+    overflow:hidden;
+  }
+}
+.l-col-lg-9 {
+  width: 100%;
+  @media (min-width: 1280px) {
+    max-width: 75%;
+    overflow:hidden;
+  }
+}
+.l-col-lg-8 {
+  width: 100%;
+  @media (min-width: 1280px) {
+    width: 66.6%;
+    overflow:hidden;
+  }
+}
+.l-col-lg-6 {
+  width: 100%;
+  @media (min-width: 1280px) {
+    max-width: 50%;
+    overflow:hidden;
+  }
+}
+.l-col-lg-4 {
+  width: 100%;
+  @media (min-width: 1280px) {
+    max-width: 33.3%;
+    overflow:hidden;
+  }
+}
+.l-col-lg-3 {
+  width: 100%;
+  @media (min-width: 1280px) {
+    max-width: 25%;
+    overflow:hidden;
+  }
+}
+.l-col-xlg-6 {
+  width: 100%;
+  @media (min-width: 1920px) {
+    max-width: 50%;
+    overflow:hidden;
+  }
+}
+.l-col-xlg-4 {
+  width: 100%;
+  @media (min-width: 1920px) {
+    max-width: 33.3%;
+    overflow:hidden;
+  }
+}
+.l-col-xlg-3 {
+  width: 100%;
+  @media (min-width: 1920px) {
+    max-width: 25%;
+    overflow:hidden;
+  }
+}
+

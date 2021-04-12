@@ -1,0 +1,763 @@
+// 再利用できるパターンとして、小さな単位のモジュールを定義。
+// ※marginなど余白は定義しない。あくまでパーツとして扱う
+// c-button, c-grid, c-input .....
+//topImageArea--------------------
+// $black: hsl(0, 0%, 4%) !default;
+// $black-bis: hsl(0, 0%, 7%) !default;
+// $black-ter: hsl(0, 0%, 14%) !default;
+// $white-ter: hsl(0, 0%, 96%) !default;
+// $white-bis: hsl(0, 0%, 98%) !default;
+// $white: hsl(0, 0%, 100%) !default;
+// $grey-darker: hsl(0, 0%, 21%) !default;
+// $grey-dark: hsl(0, 0%, 29%) !default;
+// $grey: hsl(0, 0%, 48%) !default;
+// $grey-light: hsl(0, 0%, 71%) !default;
+// $grey-lighter: hsl(0, 0%, 86%) !default;
+// xs:0px     sm:600px    md:960px    lg:1280px   xl:1920px
+@import "./variables.scss";
+.c-center{
+    margin:0 auto; 
+}
+
+// header -----------------------------
+.c-header-logo{ 
+    width: 138px;
+    height:56px;
+    padding:4px; 
+    margin:4px;
+    cursor:pointer;
+}
+.c-header-logo > .logo{
+    width:38px;
+    height:38px;
+    margin-right:8px;
+}
+.c-header-logo > .logoName {
+    width:72px;
+    height:42px;
+}
+.c-header-tablet-menu{
+    margin:0 0 0 auto;
+    display:none;
+    // display:flex;
+    // flex-flow: row nowrap;
+    // justify-content: flex-end;
+    // align-items: center;
+    padding-right:16px;
+    @media (min-width:600px){
+        display:block;
+    }
+}
+.c-header-tablet-menu > span{
+    margin-right:8px;
+    cursor:pointer
+}
+.c-header-mobile-menu-icon{
+    margin:0 0 0 auto;
+    display:block;
+    @media (min-width:600px){
+        display:none;
+    }
+}
+//Home Stage----------------------------------------
+.c-home-stage{
+    width:100%;
+    background: $black;
+}
+.c-stagehome-box{
+    margin:0 auto ;
+    width:100%;
+    height:auto;
+    overflow:hidden;
+    @media (min-width:960px) {
+        width: 100%;
+        height:auto;
+        max-width: 960px;
+    }
+}
+.c-stragehome-image-wrape{
+    margin:0  auto ;
+    padding: 48px 0 48px 0;
+}
+.c-stragehome-image-wrape > img{
+    display:block;
+    margin:0 auto;
+    width: 100%;
+    height:auto;
+    @media (min-width:960px) {
+        width: 100%;
+        height:auto;
+        max-width: 960px;
+    }
+}
+//home post ----------------------------
+.c-new-post-wrape{
+    background-color:$white;
+}
+.c-new-post-header{ 
+    width:100%;
+    margin: 8px 0;
+    padding:0px 8px;
+    @media (min-width:960px){
+        margin: 16px 0;
+        padding:0 16px;
+    }
+}
+.c-new-post-header > h2{
+    color:$grey;
+}
+
+.c-new-post-main{
+    padding:0 0;
+    width:100%;
+    display:flex;
+    flex-flow: row wrap;
+    overflow:hidden;
+    @media (min-width:960px) {
+        padding:0 0;
+    }
+}
+.c-new-post-button{
+    margin:20px  0 0 auto;
+}
+.c-new-post-footer{
+    width:100%;
+    margin:16px 0 24px 0;
+}
+
+//home FilterPosts -------------------------------
+.c-filter-posts{
+    background-color:$white-ter;
+    border:1px solid $black-ter
+}
+.c-filter-posts-element{
+    width:100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 0;
+    margin:0;
+}
+//topImageArea------------------------------------- 
+.c-imagearea{
+    margin:0 0 32px 0;
+    padding:32px 0;
+    overflow: hidden;
+    background: $black;
+}
+.c-topimgarea-header{
+    width:100%;
+    padding: 8px 0;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    @media (min-width: 960px) {
+    padding: 16px 0;
+    }
+}
+.topimagearea-header__title{
+    color:$white;
+    font-size: $size-5;
+    font-weight: 100;
+    line-height: 1.2;
+    margin:0;
+    padding:0;
+    @media (min-width: 960px) {
+        font-size: $size-1;
+        font-weight: 300;
+        line-height: 1.5;
+    }
+}
+.topimagearea-header__subtitle{
+    color:$white;
+    font-size: $size-7;
+    font-weight: 100;
+    line-height: 1.2;
+    margin:8px 0;
+    padding:0;
+    @media (min-width: 960px) {
+        font-size: $size-5;
+        font-weight: 300;
+        line-height: 1.5;
+    }
+}
+.c-imagearea-body{
+    margin:0px auto;
+    
+} 
+.c-imagearae-image > img{
+    width:100%;
+    height: auto;
+} 
+//topImageArea-------------------------------------
+.c-postarea{
+    background-color:$white-ter;
+    box-shadow:none;
+    margin-bottom: 16px;
+    @media (min-width: 960px) {
+        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+        margin-bottom: 32px;
+    }
+}
+.c-postarea-header{
+    padding:0 16px 0 16px;
+}
+.c-postarea-body-image{
+    padding: 0 0 16px 0 ;
+    @media (min-width: 960px) {
+        padding:0 16px 32px 16px;
+    }
+}
+.c-postarae-description{
+    padding:0 16px 0 16px;
+    display:flex;
+    justify-content: flex-end;
+}
+
+.c-postarea-body{
+    width:100%;
+    padding:0 16px 0 16px;
+    display:flex;
+    flex-flow: column wrap;
+    @media (min-width:960px){
+        // padding:0 15% 0 15%;
+        flex-flow: row wrap;
+    }
+    margin-bottom:16px;
+    
+}
+.c-postarea-body-location{
+    width:100%;
+    @media (min-width:960px){
+        width:25%;
+    }
+    margin-bottom:16px;
+}
+.c-postarea-body-article{
+    width:100%;
+    @media (min-width:960px){
+        width:50%;
+    }
+    margin-bottom:16px;
+    padding-right:16px;
+
+}
+.c-postarea-body-tags{
+    width:100%;
+    @media (min-width:960px){
+        width:25%;
+    }
+}
+.c-postarea-body-tags-title{
+    margin-bottom:4px;
+}
+.c-postarea-body-tags-items{
+    display:flex;
+    flex-flow:row wrap
+}
+.c-tag{
+    border:1px solid $grey-dark;
+    border-radius: 4px;
+    padding: 4px;
+    margin-right:4px;
+    margin-bottom:4px;
+    color: $grey-dark;
+}
+
+.c-postarae-image > img{
+    width:100%;
+    height: auto;
+} 
+//topImageArea-------------------------------------
+.c-locationarea{
+    margin:0 0 32px 0;
+    padding:32px 0;
+    overflow: hidden;
+    background: $black-ter;
+    overflow: hidden;
+    color:$white;
+}
+.c-locationarea-header{
+    margin: 0 auto 16px;
+}
+.c-locationarea-body{
+    width:100%;
+    display: flex;
+    flex-flow: column wrap;
+    @media (min-width: 960px) {
+        flex-flow: row wrap;
+    }
+}
+.c-locationarea-section-element{
+    width:100%;
+    padding:0;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    @media (min-width: 960px) {
+        width:50%;
+        padding:50px;
+    }
+    @media (min-width: 1280px) {
+        width:50%;
+        padding:100px;
+    }
+
+}
+.c-locationarea-googlemap {
+   height: 50vh;
+   width: 100%;
+}
+.c-locationarea-map-googlemap {
+   height: 100vh;
+   width: 100%;
+}
+.c-location-marke-wrapin{
+    position:relative;
+}
+.c-location-marker-text{
+    position:absolute;
+    color:#f50057;
+    top:40px;
+    left:0;
+    width: 300px;
+    transform:translatex(-50%);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.c-locationarea-section-video > video{
+    height: 50vh;
+    width: 100%;
+}
+.c-paginations{
+    margin:0 0 32px 0;
+    padding:32px 0;
+    overflow: hidden;
+}
+.c-locationarea-body{
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+.c-snsarea{
+    margin:0 0 32px 0;
+    padding:32px 0;
+    overflow: hidden;
+    background: $black-ter;
+    overflow: hidden;
+    color:$white;
+}
+.c-snsarea-header{
+    margin: 0 auto 16px;
+}
+.c-snsarea-body{
+    width:100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    @media (min-width: 960px) {
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+}
+// .c-snsarea-body-element{
+//     width:100%;
+//     overflow: hidden;
+//     @media(min-width:540px){
+//         width:50%;
+//     }
+//     @media(min-width:957px){
+//         width:33.333%;
+//     }
+//     // margin:.8rem;
+// }
+//PostListOfStage StageImageArea------------------
+.c-stage-image-area{
+    background-color:$black-ter;
+    width:100%;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+}
+.c-stage-image-area-image-wrape{
+    margin:0 auto;
+}
+.c-stage-image-area-image-wrape > img{
+    vertical-align: bottom;
+    margin:0;
+    width:100%;
+    height:auto;
+}
+
+//PostListGrid --------------------------------------
+.c-post-list-grid{
+    background-color:$black;
+    width:100%;
+    flex-grow: 1;
+    // min-height: 100vh;
+}
+.c-image-fit-cover{
+    object-fit: cover; 
+    width:100%;
+    height:auto;
+    display:block;
+    padding:1px;
+    // width:106px;
+    // height:auto;
+    // @media (min-width:320px){
+    //     width:150px;
+    // }
+    // @media (min-width:450px){
+    //     width:200px;
+    // }
+    // @media (min-width:600px){
+    //     width:400px;
+    // }
+    // @media (min-width:800px){
+    //     width:320px;
+    // }
+    // @media (min-width:960px){
+    //     width:420px;
+    // }
+    // @media (min-width:1260px){
+    //     width:640px;
+    // }
+    // @media (min-width:1920px){
+    //     width:853px;
+    // }
+    // @media (min-width:2560px){
+    //     width:1280px;
+    // }
+    // @media (min-width:3840px){
+    //     width:1280px;
+    // }
+    vertical-align: bottom;
+    // margin:0;
+    // margin:1px;
+    // border:1px solid grey;
+}
+
+
+
+//管理画面関連------------------------------------------------
+.c-admin-section{
+    margin-top:2.4rem;
+    color:$white;
+}
+.c-admin-wrape{
+    background-color:$white;
+    width:100%;
+    margin-top:2.4rem;
+    padding:1.6rem;
+    border-radius: .8rem;
+}
+.c-section-wrape{
+    width:100%;
+    height:100%;
+    margin:1.6rem;
+    display:flex;
+    flex-flow:nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color:$white;
+    border-radius: 1rem;
+}
+.c-signin-section{
+    padding:1.6rem;
+    margin:0 auto;
+    margin-top:2.4rem;
+    
+}
+.c-post-edit-wrape{
+    background-color:$white;
+    width:100%;
+    margin-top:2.4rem;
+    padding:1.6rem;
+    border-radius: .8rem;
+}
+.c-about-header{
+    background: rgb(10,10,10);
+	height: 100vh;
+	width: 100%;
+	margin: 0 0 24px 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+    background: linear-gradient(rgba(10,10,10,.6),
+    rgba(0,0,0,.9)), 
+    repeating-linear-gradient(0, transparent, transparent 2px, black 3px, black 3px),
+	url('../../img/img4121_flat.jpg');
+	background-size: cover;
+	background-position: center;
+	z-index: 1;
+}
+.c-about-header-wraper{
+    text-align: center;
+}
+
+.c-about-header-sub{
+    color: rgb(100,220,220);
+    letter-spacing: .2em;
+    font-weight: 100;
+}
+.c-about-header-discription{
+    // color: rgb(64, 134, 134);
+    color: rgb(246, 248, 248);
+    letter-spacing: .2em;
+    font-weight: 100;
+    width:40%;
+    overflow:auto;
+}
+.c-about-glich{
+    font-size: 2em;
+    font-weight: 100;
+	letter-spacing: .4em;    
+}
+
+/* Our mixin positions a copy of our text
+directly on our existing text, while
+also setting content to the appropriate
+text set in the data-text attribute. */
+@mixin glitchCopy { 
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+}
+.c-glitch{
+    position: relative;
+	color: white;
+    // font-size: 2em;
+    // font-weight: 100;
+	// letter-spacing: .4em;
+	/* Animation provies a slight random skew. Check bottom of doc
+	for more information on how to random skew. */
+    animation: glitch-skew 1s infinite linear alternate-reverse;
+    font-family: 'Roboto', sans-serif;
+	
+	// Creates a copy before our text. 
+	&::before{
+		// Duplicates our text with the mixin.
+		@include glitchCopy;
+		// Scoots text slightly to the left for the color offset.
+		left: 2px;
+		// Creates the color 'shadow' that happens on the glitch.
+		text-shadow: -2px 0 #ff00c1;
+		/* Creates an initial clip for our glitch. This works in
+		a typical top,right,bottom,left fashion and creates a mask
+		to only show a certain part of the glitch at a time. */
+		clip: rect(44px, 450px, 56px, 0);
+		/* Runs our glitch-anim defined below to run in a 5s loop, infinitely,
+		with an alternating animation to keep things fresh. */
+		animation: glitch-anim 5s infinite linear alternate-reverse;
+	}
+	
+	// Creates a copy after our text. Note comments from ::before.
+	&::after {
+		@include glitchCopy;
+		left: -2px;
+		text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+		animation: glitch-anim2 1s infinite linear alternate-reverse;
+    }
+    
+/* Creates an animation with 20 steaps. For each step, it calculates 
+a percentage for the specific step. It then generates a random clip
+box to be used for the random glitch effect. Also adds a very subtle
+skew to change the 'thickness' of the glitch.*/
+@keyframes glitch-anim {
+    $steps: 20;
+    @for $i from 0 through $steps {
+      #{percentage($i*(1/$steps))} {
+        clip: rect(random(100)+px, 9999px, random(100)+px, 0);
+              transform: skew((random(100) / 100) + deg);
+      }
+    }
+  }
+  
+  // Same deal, just duplicated for ultra randomness.
+  @keyframes glitch-anim2 {
+    $steps: 20;
+    @for $i from 0 through $steps {
+      #{percentage($i*(1/$steps))} {
+        clip: rect(random(100)+px, 9999px, random(100)+px, 0);
+              transform: skew((random(100) / 100) + deg);
+      }
+    }
+  }
+  
+  // Does the same deal as before, but now only skews. Used for main text.
+  @keyframes glitch-skew {
+    $steps: 10;
+    @for $i from 0 through $steps {
+      #{percentage($i*(1/$steps))} {
+        transform: skew((random(10) - 5) + deg);
+      }
+    }
+  }
+}
+.c-timeline-wraper{
+    width: 100%;
+	margin: 0 0 24px 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+    align-items: center;
+    color: $white 
+}
+
+// landing-----------------------------------------------
+.c-landingpage-wrapper{
+    position:relative;
+    height:100%;
+    width:100%;
+    // overflow:hidden;
+    border:1px solid white;
+}
+.c-landingpage-horizontal-box{
+    position:absolute;
+    top:0;
+    left:0;
+    border:1px solid red;
+    // overflow-x: scroll;
+    display:flex;
+    
+}
+.c-landingpage-virtical-box{
+    position:absolute;
+    top:0;
+    left:0;
+    color:white;
+    border:1px solid green;
+
+}
+.c-landingpage-image-wrapper{
+    width:400px;
+    margin-right:32px;
+}
+.c-landingpage-image-wrapper img{
+    width:100%;
+    height:auto;
+}
+// horizontalCarousel-----------------------------------
+.c-horizontalCarousel-box{
+    position:absolute;
+    top:50%;
+    left:0;
+    display:flex;
+    color:$white;
+    transition: 1000ms transform ease, 2100ms;
+}
+.c-horizontalCarousel-image-size{
+    width:100%;
+    height:auto;
+}
+.c-verticalCarousel-box{
+    position:absolute;
+    top:50%;
+    left:50%;
+    // display:flex;
+    // flex-direction: column;
+    color:$white;
+    transition: 1000ms transform ease, 2100ms;
+    border:3px solid white;
+    width:100%;
+}
+.c-verticalCarousel-element{
+    // height:400px;
+    min-height:80px;
+    border:1px solid green;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.c-verticalCarousel-title{
+    color:white;
+    font-size: $size-1;
+    font-weight: 600;
+    line-height: 40rem;
+    font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",sans-serif;
+    border:1px solid green;
+    background-color:rgba(0,0,0,.3);
+    display:block;
+}
+//glitch--------------------
+// 0px     600px    960px    1280px   1920px
+// $size-1: 5rem !default;
+// $size-2: 4rem !default;
+// $size-3: 3rem !default;
+// $size-4: 2rem !default;
+// $size-5: 1.5rem !default;
+// $size-6: 1rem !default;
+// $size-7: 0.75rem !default;
+// $size-8: 0.5rem !default; 
+.c-verticalCarousel-glich{
+    font-size: $size-5;
+    font-weight: 100;
+    letter-spacing: .4em; 
+    @media (min-width:600px){
+        font-size: $size-4;
+    }   
+    @media (min-width:960px){
+        font-size: $size-3;
+    }   
+    @media (min-width:1280px){
+        font-size: $size-2;
+    }   
+    @media (min-width:1920px){
+        font-size: $size-1;
+    }   
+}
+.c-landingRoot-bg{
+    opacity:0.7;
+	animation:shake 2.2s infinite linear;
+	z-index:-1;
+	position:absolute;
+	top:-15px;
+	bottom:-15px;
+	left:-15px;
+	right:-15px;
+	background:black 50% 0% no-repeat;
+	background-size:cover;
+	&:before,&:after {
+		animation:shake 1s infinite ease-in-out;
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top:0; 
+		left:-3px;
+		background: inherit;
+		// background-color:red;
+		background-color:rgb(4, 235, 252);
+		mix-blend-mode: screen;
+		background-blend-mode: darken; 
+	}
+	&:after{
+		animation-delay:0.2s;
+		left:3px;
+		// background-color:blue;
+		background-color: hsl(217, 71%, 53%);
+    }
+    @keyframes shake{
+        0%{ transform:translate(0,0); }
+        20%{ transform:translate(1px,1px); }
+        30%{ transform:translate(-1px,-1px); }
+        50%{ transform:translate(2px,0px); }
+        60%{ transform:translate(-1px,-1px); }
+        80%{ transform:translate(1px,-2px); }
+        100%{ transform:translate(0px-1px); }
+    }
+}
